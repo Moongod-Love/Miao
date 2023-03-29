@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
+    <insert id="addAccount">
+        insert into user_info
+        (username, password, phone)
+        values (#{username}, #{password}, #{phone});
+    </insert>
+    <select id="findByUsernameAndPassword" resultType="com.example.demo.entity.User">
+        select * from user_info where username=#{username} and password=#{password};
+    </select>
+    <select id="findByUsername" resultType="java.util.Map" parameterType="java.util.Map">
+        select * from user_info where username=#{username};
+    </select>
+    <update id="updateAccount">
+        update user_info set
+        username=#{username}, password=#{password}, phone=#{phone}}
+        where id=#{id};
+    </update>
+</mapper>
