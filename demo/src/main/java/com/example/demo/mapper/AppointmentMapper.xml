@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.AppointmentMapper">
+    <!--namespace根据自己需要创建的的mapper的路径和名称填写-->
+    <insert id="addAppointment">
+        insert into user_appointment
+            (user_id, group_id, real_name, id_card, apt_time, set_type, set_option)
+        values (#{user_id}, #{group_id}, #{real_name}, #{id_card}, #{apt_time}, #{set_type}, #{set_option});
+    </insert>
+</mapper>
